@@ -1,6 +1,6 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Book Projection View'
-@Metadata.ignorePropagatedAnnotations: true
+//@Metadata.ignorePropagatedAnnotations: true
 @Metadata.allowExtensions: true
 define root view entity ZC_LC_BOOK
   provider contract transactional_query
@@ -11,6 +11,8 @@ define root view entity ZC_LC_BOOK
       Author,
       Genre,
       PublishYear,
+      Logo,
+      StatusIcon,
       CreatedBy,
       CreatedAt,
       LocalChangedBy,

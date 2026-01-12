@@ -27,29 +27,43 @@ annotate entity ZC_LC_CHAPTER with
       type: #FIELDGROUP_REFERENCE,
       targetQualifier: 'Header'
   }, {
+      id: 'ChapterCollection',
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Chapter',
+      type: #COLLECTION
+  }, {
       id: 'Chapter',
       purpose: #STANDARD,
       position: 10,
-      importance: #HIGH,
       label: 'Chapter',
-      type: #IDENTIFICATION_REFERENCE
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'ChapterCollection'
+  }, {
+      id: 'Chapterid',
+      purpose: #STANDARD,
+      position: 20,
+      label: 'Book & Chapter ID',
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'ChapterCollection',
+      targetQualifier: 'Chapterid'
   }]
   @UI.lineItem: [{ position: 10 }]
-  @UI.identification: [{ position: 10, label: 'Book ID' }]
+  @UI.identification: [{ position: 10, label: 'Book ID', qualifier: 'Chapterid' }]
   BookId;
   @UI.lineItem: [{ position: 20 }]
-  @UI.identification: [{ position: 20, label: 'Chapter ID'  }]
+  @UI.identification: [{ position: 20, label: 'Chapter ID', qualifier: 'Chapterid'  }]
   ChapterId;
   @UI.lineItem: [{ position: 30, label: 'Chapter' }]
   @UI.identification: [{ position: 30, label: 'Chapter'  }]
   @Search.defaultSearchElement: true
   @Search.fuzzinessThreshold: 0.8
   @UI.selectionField: [{ position: 10 }]
-    @UI.fieldGroup: [{
-      qualifier: 'Header',
-      position: 10,
-      type: #STANDARD,
-      label: 'Chapter' }]
+  @UI.fieldGroup: [{
+    qualifier: 'Header',
+    position: 10,
+    type: #STANDARD,
+    label: 'Chapter' }]
   Title;
   @UI.lineItem: [{ position: 40, label: 'Pages' }]
   @UI.identification: [{ position: 40, label: 'Pages'  }]

@@ -10,6 +10,9 @@ define behavior for ZC_LC_BOOK alias Book
 
   use association _Chapter { create; with draft; }
 
+  use action approve;
+  use action reject;
+
   use action Activate;
   use action Discard;
   use action Edit;

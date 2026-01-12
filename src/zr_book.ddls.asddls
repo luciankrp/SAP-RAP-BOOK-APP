@@ -17,6 +17,10 @@ define root view entity ZR_BOOK
       Book.author           as Author,
       Book.genre            as Genre,
       Book.publish_year     as PublishYear,
+      @Semantics.imageUrl: true
+      Book.logo             as Logo,
+      @Semantics.imageUrl: true
+      Book.status_icon      as StatusIcon,
       @Semantics.user.createdBy: true
       Book.created_by       as CreatedBy,
       @Semantics.systemDateTime.createdAt: true

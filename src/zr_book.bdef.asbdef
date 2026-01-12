@@ -17,6 +17,9 @@ etag master LocalChangedAt
   field ( numbering : managed, readonly ) BookId;
   association _Chapter { create; with draft; }
 
+  action approve result [1] $self;
+  action reject result [1] $self;
+
   draft action Activate optimized;
   draft action Edit;
   draft action Discard;
@@ -30,6 +33,8 @@ etag master LocalChangedAt
       Author         = author;
       Genre          = genre;
       PublishYear    = publish_year;
+      Logo           = logo;
+      StatusIcon     = status_icon;
       CreatedBy      = created_by;
       CreatedAt      = creted_at;
       LocalChangedBy = local_changed_by;
